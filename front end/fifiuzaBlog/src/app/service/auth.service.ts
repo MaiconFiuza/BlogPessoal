@@ -14,11 +14,15 @@ export class AuthService {
   constructor(private http:HttpClient) {}
 
    login(userLogin: UserLogin): Observable<UserLogin>{
-      return this.http.post<UserLogin>('http://localhost:8080/usuarios/logar',userLogin)
+      return this.http.post<UserLogin>('https://fifiuzablog.herokuapp.com/usuarios/logar',userLogin)
    }
 
    cadastro(user: User): Observable<User>{
-      return this.http.post<User>('http://localhost:8080/usuarios/cadastrar',user)
+      return this.http.post<User>('https://fifiuzablog.herokuapp.com/usuarios/cadastrar',user)
+   }
+
+   getByIdUser(id:number):Observable<User>{
+  return this.http.get<User>(`https://fifiuzablog.herokuapp.com/usuarios/${id}`)
    }
 
    logado(){

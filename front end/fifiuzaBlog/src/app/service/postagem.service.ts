@@ -16,11 +16,11 @@ export class PostagemService {
   }
 
   getAllPostagens():Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('http://localhost:8080/postagens',this.token)
+    return this.http.get<Postagem[]>('https://fifiuzablog.herokuapp.com/postagens',this.token)
   }
 
   postPostagem(postagem:Postagem):Observable<Postagem>{
-    return this.http.post<Postagem>('http://localhost:8080/postagens',postagem,this.token)//Esse finalzinho de código é o que é mandado para o endpoint, nesse caso o token e e a psotagem
+    return this.http.post<Postagem>('https://fifiuzablog.herokuapp.com/postagens',postagem,this.token)//Esse finalzinho de código é o que é mandado para o endpoint, nesse caso o token e e a psotagem
   }
 
 }
